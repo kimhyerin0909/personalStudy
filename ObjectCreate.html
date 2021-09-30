@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectCreate</title>
+</head>
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        var coworkers = {
+            "programmer":"egoing",
+            "designer":"leezxhe"
+        };
+        document.write("programmer : " + coworkers.programmer + "<br>");
+        document.write("designer : " + coworkers.designer + "<br>");
+        coworkers.bookkeeper = "duru";
+        document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+        coworkers["data scientist"] = "taeho";
+        document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+        // 배열의 index
+        for(var key in coworkers) { // 객체의 데이터 수만큼 반복되는 반복문
+            document.write(coworkers[key]+ '<br>');
+        }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+        //객체에 소속된 변수를 프로퍼티 ex)bookkeeper
+        //객체에 소속된 함수를 메소드
+        //function showAll() {}와 같음
+        coworkers.showAll = function() {
+            for(var key in this) { //this는 포함되어 있는 객체를 뜻함
+                document.write(key + ' : ' + coworkers[key] + '<br>');
+            }
+        }
+        coworkers.showAll();
+    </script>
+</body>
+</html>
