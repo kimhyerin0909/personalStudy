@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_Do_List</title>
+</head>
+<body>
+    <div class="lis">
+        <ul id="todo">
+        </ul>
+    </div>
+
+    <div class="input">
+        <input type="text" id="input" placeholder="입력해주세요.">
+        <button type="button" id="btn" onclick="onClickBtn()">추가</button>
+    </div>
+
+    <script>
+        function onClickBtn() {
+            const addInput = document.getElementsById('input').value;
+            const li = document.createElement("li");
+
+            li.setAttribute('id', addInput);
+
+            const textnode = document.createTextNode(addInput);
+            li.appendChild(textnode);
+
+            document
+                .getElementById('todo')
+                .appendChild(li);    
+        }
+    </script>
+</body>
+</html>
